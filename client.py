@@ -44,7 +44,10 @@ if __name__ == '__main__':
                     for i in range(response["ANSWER"]):
                         get_command()
                     sleep(5)
-
+                except ConnectionRefusedError:
+                    break
+                except ConnectionError:
+                    break
                 except Exception as e:
                     print(e)
 
